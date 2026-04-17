@@ -1,0 +1,21 @@
+# Ignore raw data
+data/raw/
+*.csv
+*.zip
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore environment files
+.env
+.venv/
+
+# Ignore OS files
+.DS_Store
+
+# Ignore Docker artifacts
+docker/*.log
