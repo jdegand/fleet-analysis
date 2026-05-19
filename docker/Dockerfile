@@ -1,17 +1,17 @@
-FROM jupyter/scipy-notebook:latest
+FROM jupyter/scipy-notebook:x86_64-ubuntu-22.04
 
 # Set working directory inside the container
 WORKDIR /home/jovyan/work
 
 # Install additional Python packages
 RUN pip install --no-cache-dir \
-    pandas \
-    numpy \
     matplotlib \
-    seaborn \
-    scikit-learn \
+    numpy \
+    openpyxl \
+    pandas \
     pyarrow \
-    openpyxl
+    scikit-learn \
+    seaborn
 
 # Expose Jupyter port
 EXPOSE 8888

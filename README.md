@@ -29,26 +29,28 @@ This ensures the project remains lightweight, reproducible, and easy to clone.
 1. Place the downloaded dataset inside `data/raw/`.
 1. Build the Docker image:
 
-```bash
-sudo docker build -t fleet-analysis .
-```
+        ```bash
+        cd fleet-analysis/docker
+        sudo docker build -t fleet-analysis .
+        ```
 
 1. Run the container:
 
-```bash
-sudo docker run -p 8888:8888 -v $(pwd):/home/jovyan/work fleet-analysis
-```
+        ```bash
+        cd .. # Go back to root directory to be able to see all files
+        sudo docker run -p 8888:8888 -v $(pwd):/home/jovyan/work fleet-analysis
+        ```
 
 1. Open the Jupyter URL printed in the terminal.
 1. From the Jupyter home screen, open a new terminal.
 1. Navigate to the `work` directory (should be default).
 1. Run the dataset reduction script:
 
-```bash
-python reduce_dataset.py
-```
+        ```bash
+        python reduce_dataset.py
+        ```
 
-This step drastically reduces the dataset size so the project runs smoothly even on low‑power hardware.
+        This step drastically reduces the dataset size so the project runs smoothly even on low‑power hardware.
 
 1. Open any notebook and load the processed dataframe using the first code cell.
 
@@ -64,7 +66,7 @@ The processed files will be overwritten automatically.
 
 ## Quick Start (Docker)
 
-```bash
-sudo docker build -t fleet-analysis .
-sudo docker run -p 8888:8888 -v $(pwd):/home/jovyan/work fleet-analysis
-```
+        ```bash
+        sudo docker build -t fleet-analysis .
+        sudo docker run -p 8888:8888 -v $(pwd):/home/jovyan/work fleet-analysis
+        ```
